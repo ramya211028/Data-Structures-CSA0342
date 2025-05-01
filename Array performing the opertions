@@ -9,31 +9,31 @@ void traverse(int arr[], int n) {
 }
 int insert(int arr[], int *n, int element, int position) {
     if (*n >= SIZE || position < 0 || position > *n) {
-        return 0; // failure
+        return 0; 
     }
     for (int i = *n; i > position; i--) {
         arr[i] = arr[i - 1];
     }
     arr[position] = element;
     (*n)++;
-    return 1; // success
+    return 1; 
 }
 int delete(int arr[], int *n, int position) {
     if (*n <= 0 || position < 0 || position >= *n) {
-        return 0; // failure
+        return 0; 
     }
     for (int i = position; i < *n - 1; i++) {
         arr[i] = arr[i + 1];
     }
     (*n)--;
-    return 1; // success
+    return 1; 
 }
 int update(int arr[], int n, int position, int newValue) {
     if (position < 0 || position >= n) {
-        return 0; // failure
+        return 0;
     }
     arr[position] = newValue;
-    return 1; // success
+    return 1; 
 }
 int main() {
     int arr[SIZE], n = 0, choice, element, position, newValue;
@@ -52,7 +52,6 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
         switch (choice) {
             case 1:
                 traverse(arr, n);
